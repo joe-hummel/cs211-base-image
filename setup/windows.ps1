@@ -85,6 +85,6 @@ Copy-Item -Path .\docker\run.ps1  -Destination .\docker\run
 # done!
 #
 echo "done"
-echo "to build docker container: .\docker\build.bat"
-echo "to run docker container: .\docker\run.bat"
+echo "to build docker container: ./docker/build"
+echo "to run docker container: ./docker/run"
 echo "have fun!"
