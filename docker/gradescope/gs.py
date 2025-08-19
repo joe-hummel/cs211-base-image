@@ -25,15 +25,15 @@ def cli(ctx: click.Context, debug: bool, tokenpath: str):
 
 
 @click.command()
-@click.argument("cs211_course_id", required=True)
-@click.argument("cs211_project_id", required=True)
+@click.argument("course_id", required=True)
+@click.argument("project_id", required=True)
 @click.argument("files", nargs=-1, type=click.Path(exists=True))
 @click.pass_context
-def submit(ctx, cs211_course_id: str, cs211_project_id: str, files: click.Path):
+def submit(ctx, course_id: str, project_id: str, files: click.Path):
     """
-    Submit FILES to the indicated CS211 homework on Gradescope.
+    Submit FILES to the indicated assignment on Gradescope.
 
-    Requires FILES to contain all expected files for the indicated CS211 homework.
+    Requires FILES to contain all expected files for the indicated assignment.
     """
     
     tokens: LoginTokens = get_tokens(ctx)
@@ -58,14 +58,14 @@ def submit(ctx, cs211_course_id: str, cs211_project_id: str, files: click.Path):
 
     # Send everything to gradescope
     click.echo("Uploading programming submission...")
-    res = gsAPI.upload_programming_submission(cs211_course_id, cs211_project_id, None, files_dict=files_dict)
+    res = gsAPI.upload_programming_submission(course_id, project_id, None, files_dict=files_dict)
 
     if res.ok:
         click.echo("\tSuccess!")
         try:
             data = json.loads(res.content)
             submission_id = data['id']
-            print(f"Submission URL: https://www.gradescope.com/courses/{cs211_course_id}/assignments/{cs211_project_id}/submissions/{submission_id}")
+            print(f"Submission URL: https://www.gradescope.com/courses/{course_id}/assignments/{project_id}/submissions/{submission_id}")
         except Exception as e:
             print(e)
             import traceback
