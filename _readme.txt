@@ -28,7 +28,7 @@ this once):
 
   ./docker/build
 
-If the build takes more than a few minutes, type ctrl-C to exit the build 
+If the build takes more than 10 minutes, type ctrl-C to exit the build 
 command and try again.
 
 At this point, you now have a local, executable image of all the software
@@ -55,7 +55,7 @@ this once):
 
   ./docker/build
 
-If the build takes more than a few minutes, type ctrl-C (not command-C) to 
+If the build takes more than 10 minutes, type ctrl-C (not command-C) to 
 exit the build command and try again.
 
 At this point, you now have a local, executable image of all the software
@@ -87,7 +87,7 @@ this once):
 
   ./docker/build
 
-If the build takes more than a few minutes, type ctrl-C to exit the build 
+If the build takes more than 10 minutes, type ctrl-C to exit the build 
 command and try again. If you get an error message along the lines of 
 "script blocked by system's execution policy", then try the following:
 
