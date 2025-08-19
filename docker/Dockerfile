@@ -19,6 +19,9 @@ RUN apt install git -y
 RUN apt install python3 -y
 RUN apt install python3-pip -y
 RUN pip3 install lizard --break-system-packages
+RUN pip3 install click --break-system-packages
+RUN pip3 install fullGSapi[cli] --break-system-packages
+RUN pip3 install pyinstaller --break-system-packages
 #
 # turn off history file creation:
 #
