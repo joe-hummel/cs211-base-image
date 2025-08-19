@@ -14,7 +14,7 @@ submit:
 	/home/cs211/s2025/tools/projectxc submit *.c *.h
 
 submit2:
-	~/gradescope/gs submit 1012496 6325976 *.c *.h
+	/gradescope/gs submit 1012496 6325976 *.c *.h
 
 commit:
 	git add .
