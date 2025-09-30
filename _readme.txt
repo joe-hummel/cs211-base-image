@@ -127,6 +127,15 @@ do not work, then uninstall Docker Desktop, reboot, and reinstall.
   - If you see "you are not authorized", then you may need to login from 
 your terminal window:  docker login -u docker-username
 
+  - When you try to run the docker image, it fails with an error message like
+    "Error... The container name 'cs358-base-image' is already in use by ...".
+    This means the docker image is already running. So either switch to that window,
+    or if the window is closed you'll have to stop the image manually by executing
+    these commands in your Terminal/PowerShell window:
+  
+        1. docker ps -a
+        2. docker stop <CONTAINER_ID>
+
   - You can run the Docker image, but are you unable to create / write files?
 Make sure the files are NOT on a cloud-backed folder such as onedrive, google 
 drive, or dropbox. Also, if you're on a Mac, you may need to give the Terminal 
